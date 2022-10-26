@@ -9,12 +9,15 @@
 
 <main>
     <header>
+        <span class="row1">
         <h1 class="logo">Teachinder</h1>
         <form id="search">
             <input class="search-field" type="search" name="search" placeholder="Name, note or age to search"
                    aria-label="Search field">
             <input class="search-button" type="submit" value="Search">
         </form>
+        </span>
+        <span class="row2">
         <nav>
             <ul class="row-list">
                 <li><a href="#teachers">Teachers</a></li>
@@ -24,6 +27,7 @@
             </ul>
         </nav>
         <button class="add-teacher-button">Add teacher</button>
+            </span>
     </header>
     <div class="clear">
         <hr>
@@ -235,6 +239,81 @@
             <li>last</li>
         </ul>
     </article>
+
+    <div class="clear">
+        <hr>
+    </div>
+
+    <article id="favorites">
+        <h3>Favorites</h3>
+
+        <div class="carousel-outer">
+            <img src="pfps/leftarrow.png">
+            <div id="carousel">
+                <article class="teacher-entity">
+                    <div class="teacher-pfp">
+                        <img src="pfps/IMG_20211011_192918_093-01.jpeg" alt="Stosek at the library">
+                    </div>
+                    <p class="name">John Burke</p>
+                    <p class="speciality">Computer Science</p>
+                    <p class="country">Belgium</p>
+                </article>
+
+
+                <article class="teacher-entity">
+                    <div class="teacher-pfp">
+                        <img src="pfps/_MG_0674.jpg" alt="Stosek at FreshFest">
+                    </div>
+                    <p class="name">Ihor Tkachuk</p>
+                    <p class="speciality">Chemistry</p>
+                    <p class="country">Ukraine</p>
+                </article>
+
+                <article class="teacher-entity">
+                    <div class="teacher-pfp">
+                        <img src="pfps/IMG_20211009_170410.jpg" alt="Stosek at Troieschyna">
+                    </div>
+                    <p class="name">Floor Jansen</p>
+                    <p class="speciality">Vocal</p>
+                    <p class="country">Denmark</p>
+                </article>
+
+                <article class="teacher-entity">
+                    <div class="star">
+                        <img src="pfps/star.png">
+                    </div>
+                    <div class="teacher-pfp">
+                        <img src="pfps/skovoroda.jpg" alt="Hryhorii Skovoroda's memorial">
+                    </div>
+                    <p class="name">Ari Tang</p>
+                    <p class="speciality">Biology</p>
+                    <p class="country">China</p>
+                </article>
+
+                <article class="teacher-entity">
+                    <div class="teacher-pfp">
+                        <img src="pfps/SAVE_20211004_094642.jpg" alt="Fetus Stosek in Kropyvnytskyi">
+                    </div>
+                    <p class="name">Rachel Andrew</p>
+                    <p class="speciality">Medicine</p>
+                    <p class="country">UK</p>
+                </article>
+
+                <article class="teacher-entity">
+                    <div class="teacher-pfp">
+                        <p class="pfp">A.M</p>
+                    </div>
+                    <p class="name">Anna Muzychuk</p>
+                    <p class="speciality">Chess</p>
+                    <p class="country">Belarus</p>
+                </article>
+            </div>
+            <img src="pfps/rightarrow.png">
+        </div>
+
+
+    </article>
+
 
     <div class="clear">
         <hr>
