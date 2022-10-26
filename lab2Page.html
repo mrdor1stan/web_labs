@@ -9,20 +9,20 @@
 
 <main>
     <header>
-        <h1>Teachinder</h1>
+        <h1 class="logo">Teachinder</h1>
         <form id="search">
-            <input type="search" name="search" value="Name, note or age to search" aria-label="Search enter field">
-            <input type="submit" value="Search">
+            <input class="search-field" type="search" name="search" value="Name, note or age to search" aria-label="Search enter field">
+            <input class="search-button" type="submit" value="Search">
         </form>
         <nav>
-            <ul>
+            <ul class="row-list">
                 <li><a href="#teachers">Teachers</a></li>
                 <li><a href="#statistics">Statistics</a></li>
                 <li><a href="#favorites">Favorites</a></li>
                 <li><a href="#about">About</a></li>
             </ul>
         </nav>
-        <button>Add teacher</button>
+        <button class="add-teacher-button">Add teacher</button>
     </header>
     <div class="clear">
         <hr>
@@ -30,6 +30,7 @@
     <article id="teachers">
         <h3>Top teachers</h3>
         <form>
+            <div class="right-border">
             <label for="age">Age</label>
             <select id="age" name="age">
                 <option>All</option>
@@ -37,6 +38,9 @@
                 <option>32-41</option>
                 <option>42-51</option>
             </select>
+                </div>
+
+            <div class="right-border">
             <label for="region">Region</label>
             <select id="region" name="region">
                 <option>All</option>
@@ -46,6 +50,9 @@
                 <option>North America</option>
                 <option>South America</option>
             </select>
+            </div>
+
+            <div class="right-border">
             <label for="sex">Sex</label>
             <select id="sex" name="sex">
                 <option>All</option>
@@ -53,10 +60,15 @@
                 <option>Female</option>
                 <option>Other</option>
             </select>
+            </div>
+                <div class="right-border">
             <input type="checkbox" id="only-with-photo" name="only-with-photo">
             <label for="only-with-photo">Only with photo</label>
+                </div>
+                    <div>
             <input type="checkbox" id="only-favs" name="only-favs">
             <label for="only-favs">Only favorites</label>
+                    </div>
         </form>
 
         <section id="teachers-list">
@@ -89,6 +101,9 @@
             </article>
 
             <article class="teacher-entity">
+                <div class="star">
+                    <img src="pfps/star.png">
+                </div>
                 <div class="teacher-pfp">
                     <img src="pfps/skovoroda.jpg" alt="Hryhorii Skovoroda's memorial">
                 </div>
@@ -211,8 +226,18 @@
                 <td>France</td>
             </tr>
         </table>
+        <ul class="row-list">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>...</li>
+            <li>last</li>
+        </ul>
     </article>
 
+    <div class="clear">
+        <hr>
+    </div>
 
     <footer>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -229,15 +254,15 @@
             magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
             facilisis.</p>
 
-            <nav>
-                <ul>
+            <nav class="lower-nav">
+                <ul class="row-list">
                     <li><a href="#teachers">Teachers</a></li>
                     <li><a href="#statistics">Statistics</a></li>
                     <li><a href="#favorites">Favorites</a></li>
                     <li><a href="#about">About</a></li>
                 </ul>
+                <button class="add-teacher-button">Add teacher</button>
             </nav>
-            <button>Add teacher</button>
     </footer>
 </main>
 </body>
