@@ -7,217 +7,238 @@
 </head>
 <body>
 
-<header>
-    <label>Teachinder</label>
-    <form id="search">
-        <input value="Name, note or age to search">
-        <input type="submit">
-    </form>
-</header>
-
-<nav>
-    <a href="#teachers">Teachers</a>
-    <a href="#statistics">Statistics</a>
-    <a href="#favorites">Favorites</a>
-    <a href="#about">About</a>
-    <button>Add teacher</button>
-</nav>
-<hr>
-<section id="teachers">
-    <h3>Top teachers</h3>
-    <form>
-        <label for="age">Age</label>
-        <select id="age" name="age">
-            <option>All</option>
-            <option>18-31</option>
-            <option>32-41</option>
-            <option>42-51</option>
-        </select>
-        <label for="region">Region</label>
-        <select id="region" name="region">
-            <option>All</option>
-            <option>Europe</option>
-            <option>Asia</option>
-            <option>Australia</option>
-            <option>North America</option>
-            <option>South America</option>
-        </select>
-        <label for="sex">Sex</label>
-        <select id="sex" name="sex">
-            <option>All</option>
-            <option>Male</option>
-            <option>Female</option>
-            <option>Other</option>
-        </select>
-        <input type="checkbox" id="only-with-photo" name="only-with-photo">
-        <label for="only-with-photo">Only with photo</label>
-        <input type="checkbox" id="only-favs" name="only-favs">
-        <label for="only-favs">Only favorites</label>
-    </form>
-
-    <article class="teacher-entity">
-        <div class="teacher-pfp">
-            <img src="pfps/_MG_0674.jpg" alt="Stosek at FreshFest">
-        </div>
-        <p class="name">Ihor Tkachuk</p>
-        <p class="speciality">Chemistry</p>
-        <p class="country">Ukraine</p>
-    </article>
-
-    <article class="teacher-entity">
-        <div class="teacher-pfp">
-            <img src="pfps/IMG_20211009_170410.jpg" alt="Stosek at Troieschyna">
-        </div>
-        <p class="name">Floor Jansen</p>
-        <p class="speciality">Vocal</p>
-        <p class="country">Denmark</p>
-    </article>
-
-    <article class="teacher-entity">
-        <div class="teacher-pfp">
-            <img src="pfps/IMG_20211011_192918_093-01.jpeg" alt="Stosek at the library">
-        </div>
-        <p class="name">John Burke</p>
-        <p class="speciality">Computer Science</p>
-        <p class="country">Belgium</p>
-    </article>
-
-    <article class="teacher-entity">
-        <div class="teacher-pfp">
-            <img src="pfps/skovoroda.jpg" alt="Hryhorii Skovoroda's memorial">
-        </div>
-        <p class="name">Ari Tang</p>
-        <p class="speciality">Biology</p>
-        <p class="country">China</p>
-    </article>
-
-    <article class="teacher-entity">
-        <div class="teacher-pfp">
-            <img src="pfps/SAVE_20211004_094642.jpg" alt="Fetus Stosek in Kropyvnytskyi">
-        </div>
-        <p class="name">Rachel Andrew</p>
-        <p class="speciality">Medicine</p>
-        <p class="country">UK</p>
-    </article>
-
-    <article class="teacher-entity">
-        <div class="teacher-pfp">
-            <p class="pfp">A.M</p>
-        </div>
-        <p class="name">Anna Muzychuk</p>
-        <p class="speciality">Chess</p>
-        <p class="country">Belarus</p>
-    </article>
-
-    <article class="teacher-entity">
-        <div class="teacher-pfp">
-            <p class="pfp">R.L</p>
-        </div>
-        <p class="name">Radoslaw Ljuboevic</p>
-        <p class="speciality">Physics</p>
-        <p class="country">Poland</p>
-    </article>
-
-</section>
-
-<hr>
-
-<article id="statistics">
-    <h3>Statistics</h3>
-    <table>
-    <tr aria-label="Header row">
-        <th>Name</th>
-        <th>Speciality</th>
-        <th>Age</th>
-        <th>Gender</th>
-        <th>Nationality</th>
-    </tr>
-    <tr aria-label="Daisy Alexander">
-        <td>Daisy Alexander</td>
-        <td>Chemistry</td>
-        <td>28</td>
-        <td>Female</td>
-        <td>Vietnam</td>
-    </tr>
-    <tr aria-label="Julia Bradley">
-        <td>Julia Bradley</td>
-        <td>Math</td>
-        <td>26</td>
-        <td>Female</td>
-        <td>USA</td>
-    </tr>
-    <tr aria-label="Rita Hart">
-        <td>Rita Hart</td>
-        <td>Art</td>
-        <td>41</td>
-        <td>Female</td>
-        <td>Ireland</td>
-    </tr>
-    <tr aria-label="Jonathan Jacobs">
-        <td>Jonathan Jacobs</td>
-        <td>Math</td>
-        <td>32</td>
-        <td>Male</td>
-        <td>England</td>
-    </tr>
-    <tr aria-label="Nathaniel White">
-        <td>Nathaniel White</td>
-        <td>Computer Science</td>
-        <td>37</td>
-        <td>Male</td>
-        <td>Austria</td>
-    </tr>
-    <tr aria-label="Frank Medina">
-        <td>Frank Medina</td>
-        <td>English</td>
-        <td>43</td>
-        <td>Male</td>
-        <td>Italy</td>
-    </tr>
-    <tr aria-label="Ella Curtis">
-        <td>Ella Curtis</td>
-        <td>Chess</td>
-        <td>34</td>
-        <td>Female</td>
-        <td>USA</td>
-    </tr>
-    <tr aria-label="Claire Simmmons">
-        <td>Claire Simmmons</td>
-        <td>Art</td>
-        <td>38</td>
-        <td>Female</td>
-        <td>Netherlands</td>
-    </tr>
-    <tr aria-label="Benjamin Knight">
-        <td>Benjamin Knight</td>
-        <td>Biology</td>
-        <td>44</td>
-        <td>Male</td>
-        <td>Scotland</td>
-    </tr>
-    <tr aria-label="Norma Rose">
-        <td>Norma Rose</td>
-        <td>Statistics</td>
-        <td>36</td>
-        <td>Female</td>
-        <td>France</td>
-    </tr>
-    </table>
-</article>
-
-
-<footer>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-    <nav>
-        <a href="#teachers">Teachers</a>
-        <a href="#statistics">Statistics</a>
-        <a href="#favorites">Favorites</a>
-        <a href="#about">About</a>
+<main>
+    <header>
+        <h1>Teachinder</h1>
+        <form id="search">
+            <input type="search" name="search" value="Name, note or age to search" aria-label="Search enter field">
+            <input type="submit" value="Search">
+        </form>
+        <nav>
+            <ul>
+                <li><a href="#teachers">Teachers</a></li>
+                <li><a href="#statistics">Statistics</a></li>
+                <li><a href="#favorites">Favorites</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
         <button>Add teacher</button>
-    </nav>
-</footer>
+    </header>
+    <div class="clear">
+        <hr>
+    </div>
+    <article id="teachers">
+        <h3>Top teachers</h3>
+        <form>
+            <label for="age">Age</label>
+            <select id="age" name="age">
+                <option>All</option>
+                <option>18-31</option>
+                <option>32-41</option>
+                <option>42-51</option>
+            </select>
+            <label for="region">Region</label>
+            <select id="region" name="region">
+                <option>All</option>
+                <option>Europe</option>
+                <option>Asia</option>
+                <option>Australia</option>
+                <option>North America</option>
+                <option>South America</option>
+            </select>
+            <label for="sex">Sex</label>
+            <select id="sex" name="sex">
+                <option>All</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+            </select>
+            <input type="checkbox" id="only-with-photo" name="only-with-photo">
+            <label for="only-with-photo">Only with photo</label>
+            <input type="checkbox" id="only-favs" name="only-favs">
+            <label for="only-favs">Only favorites</label>
+        </form>
 
+        <section id="teachers-list">
+
+            <article class="teacher-entity">
+                <div class="teacher-pfp">
+                    <img src="pfps/_MG_0674.jpg" alt="Stosek at FreshFest">
+                </div>
+                <p class="name">Ihor Tkachuk</p>
+                <p class="speciality">Chemistry</p>
+                <p class="country">Ukraine</p>
+            </article>
+
+            <article class="teacher-entity">
+                <div class="teacher-pfp">
+                    <img src="pfps/IMG_20211009_170410.jpg" alt="Stosek at Troieschyna">
+                </div>
+                <p class="name">Floor Jansen</p>
+                <p class="speciality">Vocal</p>
+                <p class="country">Denmark</p>
+            </article>
+
+            <article class="teacher-entity">
+                <div class="teacher-pfp">
+                    <img src="pfps/IMG_20211011_192918_093-01.jpeg" alt="Stosek at the library">
+                </div>
+                <p class="name">John Burke</p>
+                <p class="speciality">Computer Science</p>
+                <p class="country">Belgium</p>
+            </article>
+
+            <article class="teacher-entity">
+                <div class="teacher-pfp">
+                    <img src="pfps/skovoroda.jpg" alt="Hryhorii Skovoroda's memorial">
+                </div>
+                <p class="name">Ari Tang</p>
+                <p class="speciality">Biology</p>
+                <p class="country">China</p>
+            </article>
+
+            <article class="teacher-entity">
+                <div class="teacher-pfp">
+                    <img src="pfps/SAVE_20211004_094642.jpg" alt="Fetus Stosek in Kropyvnytskyi">
+                </div>
+                <p class="name">Rachel Andrew</p>
+                <p class="speciality">Medicine</p>
+                <p class="country">UK</p>
+            </article>
+
+            <article class="teacher-entity">
+                <div class="teacher-pfp">
+                    <p class="pfp">A.M</p>
+                </div>
+                <p class="name">Anna Muzychuk</p>
+                <p class="speciality">Chess</p>
+                <p class="country">Belarus</p>
+            </article>
+
+            <article class="teacher-entity">
+                <div class="teacher-pfp">
+                    <p class="pfp">R.L</p>
+                </div>
+                <p class="name">Radoslaw Ljuboevic</p>
+                <p class="speciality">Physics</p>
+                <p class="country">Poland</p>
+            </article>
+        </section>
+    </article>
+
+    <div class="clear">
+        <hr>
+    </div>
+
+    <article id="statistics">
+        <h3>Statistics</h3>
+        <table>
+            <tr aria-label="Header row">
+                <th>Name</th>
+                <th>Speciality</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Nationality</th>
+            </tr>
+            <tr aria-label="Daisy Alexander">
+                <td>Daisy Alexander</td>
+                <td>Chemistry</td>
+                <td>28</td>
+                <td>Female</td>
+                <td>Vietnam</td>
+            </tr>
+            <tr aria-label="Julia Bradley">
+                <td>Julia Bradley</td>
+                <td>Math</td>
+                <td>26</td>
+                <td>Female</td>
+                <td>USA</td>
+            </tr>
+            <tr aria-label="Rita Hart">
+                <td>Rita Hart</td>
+                <td>Art</td>
+                <td>41</td>
+                <td>Female</td>
+                <td>Ireland</td>
+            </tr>
+            <tr aria-label="Jonathan Jacobs">
+                <td>Jonathan Jacobs</td>
+                <td>Math</td>
+                <td>32</td>
+                <td>Male</td>
+                <td>England</td>
+            </tr>
+            <tr aria-label="Nathaniel White">
+                <td>Nathaniel White</td>
+                <td>Computer Science</td>
+                <td>37</td>
+                <td>Male</td>
+                <td>Austria</td>
+            </tr>
+            <tr aria-label="Frank Medina">
+                <td>Frank Medina</td>
+                <td>English</td>
+                <td>43</td>
+                <td>Male</td>
+                <td>Italy</td>
+            </tr>
+            <tr aria-label="Ella Curtis">
+                <td>Ella Curtis</td>
+                <td>Chess</td>
+                <td>34</td>
+                <td>Female</td>
+                <td>USA</td>
+            </tr>
+            <tr aria-label="Claire Simmmons">
+                <td>Claire Simmmons</td>
+                <td>Art</td>
+                <td>38</td>
+                <td>Female</td>
+                <td>Netherlands</td>
+            </tr>
+            <tr aria-label="Benjamin Knight">
+                <td>Benjamin Knight</td>
+                <td>Biology</td>
+                <td>44</td>
+                <td>Male</td>
+                <td>Scotland</td>
+            </tr>
+            <tr aria-label="Norma Rose">
+                <td>Norma Rose</td>
+                <td>Statistics</td>
+                <td>36</td>
+                <td>Female</td>
+                <td>France</td>
+            </tr>
+        </table>
+    </article>
+
+
+    <footer>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
+            facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore
+            et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
+            lacus
+            vel facilisis.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
+            facilisis.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
+            facilisis.</p>
+
+            <nav>
+                <ul>
+                    <li><a href="#teachers">Teachers</a></li>
+                    <li><a href="#statistics">Statistics</a></li>
+                    <li><a href="#favorites">Favorites</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+            <button>Add teacher</button>
+    </footer>
+</main>
 </body>
 </html>
