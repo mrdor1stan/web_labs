@@ -11,7 +11,8 @@
     <header>
         <h1 class="logo">Teachinder</h1>
         <form id="search">
-            <input class="search-field" type="search" name="search" value="Name, note or age to search" aria-label="Search enter field">
+            <input class="search-field" type="search" name="search" placeholder="Name, note or age to search"
+                   aria-label="Search field">
             <input class="search-button" type="submit" value="Search">
         </form>
         <nav>
@@ -31,44 +32,44 @@
         <h3>Top teachers</h3>
         <form>
             <div class="right-border">
-            <label for="age">Age</label>
-            <select id="age" name="age">
-                <option>All</option>
-                <option>18-31</option>
-                <option>32-41</option>
-                <option>42-51</option>
-            </select>
-                </div>
-
-            <div class="right-border">
-            <label for="region">Region</label>
-            <select id="region" name="region">
-                <option>All</option>
-                <option>Europe</option>
-                <option>Asia</option>
-                <option>Australia</option>
-                <option>North America</option>
-                <option>South America</option>
-            </select>
+                <label for="search-age">Age</label>
+                <select id="search-age" name="age">
+                    <option>All</option>
+                    <option>18-31</option>
+                    <option>32-41</option>
+                    <option>42-51</option>
+                </select>
             </div>
 
             <div class="right-border">
-            <label for="sex">Sex</label>
-            <select id="sex" name="sex">
-                <option>All</option>
-                <option>Male</option>
-                <option>Female</option>
-                <option>Other</option>
-            </select>
+                <label for="search-region">Region</label>
+                <select id="search-region" name="region">
+                    <option>All</option>
+                    <option>Europe</option>
+                    <option>Asia</option>
+                    <option>Australia</option>
+                    <option>North America</option>
+                    <option>South America</option>
+                </select>
             </div>
-                <div class="right-border">
-            <input type="checkbox" id="only-with-photo" name="only-with-photo">
-            <label for="only-with-photo">Only with photo</label>
-                </div>
-                    <div>
-            <input type="checkbox" id="only-favs" name="only-favs">
-            <label for="only-favs">Only favorites</label>
-                    </div>
+
+            <div class="right-border">
+                <label for="search-sex">Sex</label>
+                <select id="search-sex" name="sex">
+                    <option>All</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <div class="right-border">
+                <input type="checkbox" id="only-with-photo" name="only-with-photo">
+                <label for="only-with-photo">Only with photo</label>
+            </div>
+            <div>
+                <input type="checkbox" id="only-favs" name="only-favs">
+                <label for="only-favs">Only favorites</label>
+            </div>
         </form>
 
         <section id="teachers-list">
@@ -254,16 +255,89 @@
             magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
             facilisis.</p>
 
-            <nav class="lower-nav">
-                <ul class="row-list">
-                    <li><a href="#teachers">Teachers</a></li>
-                    <li><a href="#statistics">Statistics</a></li>
-                    <li><a href="#favorites">Favorites</a></li>
-                    <li><a href="#about">About</a></li>
-                </ul>
-                <button class="add-teacher-button">Add teacher</button>
-            </nav>
+        <nav class="lower-nav">
+            <ul class="row-list">
+                <li><a href="#teachers">Teachers</a></li>
+                <li><a href="#statistics">Statistics</a></li>
+                <li><a href="#favorites">Favorites</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <button class="add-teacher-button">Add teacher</button>
+        </nav>
     </footer>
 </main>
+
+
+<div id="teacher-info" data-background-color="#1989ff">
+    <div class="popup-header">
+        <h3>Teacher info</h3>
+        <img src="pfps/cross.png" alt="Close" class="icon">
+    </div>
+
+    <img class="long-photo"
+         src="https://m.media-amazon.com/images/M/MV5BMjA5ODI0NzIzNV5BMl5BanBnXkFtZTcwMzM0NjI2Nw@@._V1_.jpg"
+         alt="Taylor Swift">
+    <p class="name">Taylor Swift (she/her)</p>
+    <p class="speciality">Chemistry</p>
+    <p>Kyiv, Ukraine</p>
+    <p>32, Female</p>
+    <a href="mailto:communications@umusic.com">communications@umusic.com</a>
+    <p>+380964993252</p>
+    <p class="wide-text">21 жовтня випускає альбом, який треба застрімити всією школою</p>
+    <a>toggle map</a>
+</div>
+
+
+<div id="add-teacher" data-background-color="#1989ff">
+    <div class="popup-header">
+        <h3>Add teacher</h3>
+        <img src="pfps/cross.png" alt="Close" class="icon">
+    </div>
+    <form id="add-teacher-form">
+        <label for="name" class="wide-text">Name</label>
+        <input id="name" class="wide-text" name="name" placeholder="Enter name">
+
+
+        <label for="speciality" class="wide-text">Speciality</label>
+        <select aria-label="Speciality" class="wide-text" id="speciality" name="speciality">
+            <option selected disabled hidden>choose</option>
+            <option name="math">Mathematics</option>
+            <option name="female">Chess</option>
+            <option name="non-binary">Computer Science</option>
+        </select>
+
+        <label for="country">Country</label>
+        <label for="city">City</label>
+        <input id="country" name="country">
+        <input id="city" name="city">
+        <label for="email">E-mail</label>
+        <label for="phone">Phone</label>
+        <input id="email" name="email" type="email">
+        <input id="phone" name="phone" type="tel">
+        <span class="wide-text">
+        <label for="birthdate" class="wide-text">Date of birth</label>
+        <input id="birthdate" class="wide-text" name="birthdate" type="date">
+        </span>
+        <span class="wide-text">
+        <label for="bg-colour">Background color</label>
+        <input id="bg-colour" name="bg-colour" type="color">
+        </span>
+
+        <span class="wide-text">
+        <label id="sex">Sex</label>
+        <input type="radio" id="male"
+               name="sex" value="male" for="sex">
+        <label for="male">Male</label>
+
+        <input type="radio" id="female"
+               name="sex" value="female" for="sex">
+        <label for="female">Female</label>
+</span>
+
+        <label for="comments" class="wide-text">Notes (optional)</label>
+        <textarea id="comments" name="comments" cols="30" rows="10" class="wide-text"></textarea>
+        <input id="add-button" type="submit" value="Add" class="wide-text">
+    </form>
+</div>
 </body>
 </html>
