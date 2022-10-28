@@ -28,20 +28,32 @@ body {
     transition: all 1s;
 }
 
+button:hover{
+    cursor:pointer;
+}
+
 .logo:hover {
     text-shadow: -3px -3px rgba(255, 0, 0, 0.6),
     4px 4px rgba(0, 0, 0, 0.6);
     transform: scale(110%);
 }
-
+.row-list{
+    padding-inline-start: 0px;
+}
 .row-list li {
     list-style-type: none;
     float: left;
     margin-right: 5px;
 }
+
+h3{
+    font-size: 2em;
+}
+
 .row-list li a {
+    text-decoration: none;
     color: var(--pink);
-    padding: 0 15px;
+    padding-right: 15px;
 }
 a:hover {
     color: var(--pink-hover);
@@ -54,6 +66,7 @@ main {
 }
 
 header {
+    margin:0 2%;
     display: flex;
     flex-flow: column;
     padding: 15px;
@@ -61,7 +74,7 @@ header {
 
 .row1{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 
     padding: 15px;
 }
@@ -73,8 +86,12 @@ header {
     padding: 15px
 }
 
+nav li {
+    font-size: 1.25em;
+}
 
 .add-teacher-button {
+    margin: 0;
     border: 4px solid var(--pink);
     color: var(--pink);
     width: 140px;
@@ -160,8 +177,9 @@ color: var(--gray);
 }
 
 #teachers form div {
-padding: 8px;
+padding: 0 5px;
 }
+
 
 div.right-border {
 border-right: dotted 2px var(--gray);
@@ -169,13 +187,15 @@ border-right: dotted 2px var(--gray);
 
 #teachers-list {
 display: flex;
-justify-content: center;
+justify-content: left;
 align-items: center;
 flex-flow: row wrap;
+    column-gap: normal;
 }
 
 .teacher-entity {
 float: left;
+    width:var(--pfp-size);
 margin: 20px;
 position: relative;
 top: 0;
@@ -198,6 +218,8 @@ font-size: 1em;
 .teacher-entity p.country {
 font-size: 0.8em;
 }
+
+
 
 div.teacher-pfp {
 position: relative;
@@ -227,6 +249,7 @@ width:calc(var(--pfp-size)/3);
 
 div.teacher-pfp:hover {
 border: solid 6px var(--pink-hover);
+    cursor: pointer;
 }
 
 div.teacher-pfp p {
@@ -240,7 +263,12 @@ color: var(--pink-hover);
 }
 
 div.teacher-pfp img {
+    transition: all 0.5s;
 width: 100%;
+}
+
+div.teacher-pfp:hover img {
+    width: 110%;
 }
 
 #statistics table {
@@ -256,8 +284,16 @@ background-color: var(--table-pink);
 #statistics table th {
 background-color: var(--table-white);
 border-bottom: 1px solid var(--black);
+    padding: 3px 0;
+    transition:0.25s all;
 }
 
+#statistics table th:hover {
+
+    background-color: #efefef;
+    border-bottom: 2px solid var(--black);
+
+}
 
 .clear {
 clear: both;
@@ -269,10 +305,10 @@ padding:5%;
 }
 
 .lower-nav {
-display:grid;
-grid-column: 2;
-grid-template-columns: 0.8fr 0.4fr;
-justify-self: center;
+display:flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
 }
 
 @media only screen and (max-width: 768px) {
@@ -292,6 +328,7 @@ justify-self: center;
     .row1, .row2 {
         display: flex;
         flex-direction: column;
+        align-content: center;
         align-items: center;
         justify-content: center;
         text-align: center;
@@ -300,19 +337,21 @@ justify-self: center;
     .row1 *, .row2 * {
         padding: 5px;
     }
-    }
 
     li{
-         margin-right: 2px;
-     }
+        margin-right: 2px;
+    }
     .lower-nav {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-row: 2;
-        justify-self: center;
+        display: flex;
+        flex-direction: row;
+        flex-flow: wrap;
+        justify-content: center;
         align-self: center;
         text-align: center;
-        margin: auto;
+    }
+
+    #teachers-list {
+        justify-content: center;
     }
 
     .add-teacher-button{
@@ -323,6 +362,9 @@ justify-self: center;
     .search-button{
         height: 40px;
     }
+    }
+
+
 
 #teacher-info{
     border:1px solid black;
@@ -356,7 +398,7 @@ color:whitesmoke;
 
 #carousel{
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     flex-flow: row nowrap;
     overflow-x: auto;
