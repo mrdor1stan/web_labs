@@ -64,8 +64,6 @@ function getUsersArray() {
 function task1() {
     var users = getUsersArray();
     var addUsers = additionalUsers.filter((ar => !users.find(rm => (ar.phone === rm.phone&& ar.email === rm.email))));
-
-
     let withAdditionalUsers = users.concat(addUsers);
     return withAdditionalUsers;
 }
@@ -120,6 +118,58 @@ function filterUsers(users, country, age, gender, favorite) {
 
 }
 
+function task3(users, field, ascendingOrder){
+    if(field=="age"){
+      users.sort(function(a,b){return ascendingOrder ? compareAge(a, b) : compareAge(b,a)});
+    } else if(field=="country"){
+        users.sort(function(a,b){ascendingOrder ? compareCountry(a, b) : compareCountry(b,a)});
+    } else if (field=="b_date"){
+        users.sort(function(a,b){ascendingOrder ? compareBDate(a, b) : compareBDate(b,a)});
+    } else if (field=="full_name"){
+        users.sort(function(a,b){ascendingOrder ? compareName(a, b) : compareName(b,a)});
+    }
+
+    return users;
+
+}
+
+function compareAge(el1, el2){
+    if(el1.age===el2.age)
+        return 0;
+    if(el1.age>el2.age)
+        return 1;
+    else return -1;
+}
+
+function compareCountry(el1, el2){
+    if ( el1.country < el2.country ){
+        return -1;
+    }
+    if ( el1.country> el2.country ){
+        return 1;
+    }
+    return 0;
+}
+
+function compareName(el1, el2){
+    if ( el1.full_name < el2.full_name ){
+        return -1;
+    }
+    if ( el1.full_name> el2.full_name ){
+        return 1;
+    }
+    return 0;
+}
+
+function compareBDate(el1, el2){
+        if ( el1.b_date < el2.b_date ){
+            return -1;
+        }
+        if ( el1.b_date> el2.b_date ){
+            return 1;
+        }
+        return 0;
+}
 
 function task6(array, func) {
     let count = 0;
@@ -137,8 +187,9 @@ function task5(array, search){
 
 function main() {
     let users = task1();
-  console.log(users);
-    console.log(task5(users, '32'));
+   let sortedUsers = task3(users,"full_name", true);
+  console.log(sortedUsers);
+    /*console.log(task5(users, '32'));
 
     console.log(task5(users, 'Jordan Vidal'));
 
@@ -146,12 +197,15 @@ function main() {
         return element.age>30;
     }
     function ageNotMoreThan30(element){
+        return !ageMoreThan30(element);
+    }
+    function ageLessThanOrEqualTo30(element){
         return element.age<=30;
     }
 
     console.log(task6(users, ageMoreThan30));
     console.log(task6(users, ageNotMoreThan30));
-
+    console.log(task6(users, ageLessThanOrEqualTo30));*/
 
  /*   console.log(filterUsers(users, "Finland", null, null, null));
     console.log(filterUsers(users, "Finland", null, "female", null));
