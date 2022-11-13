@@ -120,13 +120,13 @@ function filterUsers(users, country, age, gender, favorite) {
 
 function task3(users, field, ascendingOrder){
     if(field=="age"){
-      users.sort(function(a,b){return ascendingOrder ? compareAge(a, b) : compareAge(b,a)});
+     users= users.sort((a,b)=> ascendingOrder ? compareAge(a, b) : compareAge(b,a));
     } else if(field=="country"){
-        users.sort(function(a,b){ascendingOrder ? compareCountry(a, b) : compareCountry(b,a)});
+        users= users.sort((a,b)=> ascendingOrder ? compareCountry(a, b) : compareCountry(b,a));
     } else if (field=="b_date"){
-        users.sort(function(a,b){ascendingOrder ? compareBDate(a, b) : compareBDate(b,a)});
+      users=  users.sort((a,b)=>ascendingOrder ? compareBDate(a, b) : compareBDate(b,a));
     } else if (field=="full_name"){
-        users.sort(function(a,b){ascendingOrder ? compareName(a, b) : compareName(b,a)});
+      users=  users.sort((a,b)=>ascendingOrder ? compareName(a, b) : compareName(b,a));
     }
 
     return users;
@@ -187,8 +187,8 @@ function task5(array, search){
 
 function main() {
     let users = task1();
-   let sortedUsers = task3(users,"full_name", true);
-  console.log(sortedUsers);
+  let sortedUsers = task3(users,"b_date", true);
+ console.log(sortedUsers);
     /*console.log(task5(users, '32'));
 
     console.log(task5(users, 'Jordan Vidal'));
