@@ -1,0 +1,18 @@
+#teacher-info{
+    display: grid;
+    grid-row: 9;
+    grid-column: 2;
+    grid-template-column: 0.3fr 0.8fr;
+}
+
+.long-photo{
+    grid-row: 2 / 8; /* same concept, but for rows */
+    width:20%;
+}
+.wide-text{
+    grid-column: 1 / 3;
+}
+
+.icon{
+    width: 50px;
+}

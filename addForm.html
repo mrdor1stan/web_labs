@@ -5,54 +5,35 @@
     <title>Завдання 1. Додати викладача</title>
 </head>
 <body>
-<section>
+<article>
     <form title="Додати викладача">
-<h3>Додайте викладача</h3>
-    <label>
-        Повне ім’я
-        <input>
-    </label>
-        <br>
-        <label>
-            Стать
-        <select aria-label="Вибір статі">
+        <h3>Додайте викладача</h3>
+        <label for="name">Повне ім’я</label>
+        <input id="name" name="name">
+        <label for="sex">Стать</label>
+        <select aria-label="Вибір статі" id="sex" name="sex">
             <option selected disabled hidden>оберіть</option>
-            <option>Чоловік</option>
-            <option>Жінка</option>
-            <option>Інше</option>
+            <option name="male">Чоловік</option>
+            <option name="female">Жінка</option>
+            <option name="other">Інше</option>
         </select>
-        </label>
-        <br>
-        <label>Дата народження
-        <input type="date">
-        </label>
-        <br>
-        <label>E-mail
-        <input type="email">
-        </label>
-        <br>
-        <label>Телефон
-        <input type="tel">
-        </label>
-        <br>
-        <label>Бажаний колір фону
-            <input type="color">
-        </label>
-        <br>
-        <label>Країна
-        <input>
-        </label>
-        <br>
-        <label>Місто
-            <input>
-        </label>
-        <br>
-        <label>Коментар
-            <input>
-        </label>
-        <br>
+        <label for="birthdate">Дата народження</label>
+        <input id="birthdate" name="birthdate" type="date">
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email">
+        <label for="phone">Телефон</label>
+        <input id="phone" name="phone" type="tel">
+        <label for="bg-colour">Бажаний колір фону</label>
+        <input id="bg-colour" name="bg-colour" type="color">
+        <label for="country">Країна</label>
+        <input id="country" name="country">
+        <label for="city">Місто</label>
+        <input id="city" name="city">
+
+        <label for="comments">Коментар</label>
+        <textarea id="comments" name="comments" cols="30" rows="4">Коментарі зайві</textarea>
         <input type="submit" value="Надіслати">
     </form>
-</section>
+</article>
 </body>
 </html>
