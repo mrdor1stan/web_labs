@@ -22,10 +22,10 @@ function getUsersArray() {
     let id = 12206461;
     for (let i = 0; i < randomUserMock.length; i++) {
 
-        var favorite = ("favorite" in randomUserMock[i]) ? randomUserMock[i].favorite : rand([false, true]);
-        var bg_color = ("bg_color" in randomUserMock[i]) ? randomUserMock[i].bg_color : "#" + Math.floor(Math.random() * 16777215).toString(16);
-        var course = ("course" in randomUserMock[i]) ? randomUserMock[i].course : randomCourse();
-        var note = ("note" in randomUserMock[i]) ? randomUserMock[i].note : randomNote(randomUserMock[i].name.first + ' ' + randomUserMock[i].name.last, course);
+        var favorite =   randomUserMock[i].favorite===false ? false : randomUserMock[i].favorite || rand([false, true]);
+        var bg_color = randomUserMock[i].bg_color || "#" + Math.floor(Math.random() * 16777215).toString(16);
+        var course = randomUserMock[i].course || randomCourse();
+        var note = randomUserMock[i].note || randomNote(randomUserMock[i].name.first + ' ' + randomUserMock[i].name.last, course);
 
         users.push({
                 "id": id++,
@@ -63,8 +63,8 @@ function getUsersArray() {
 
 function task1() {
     var users = getUsersArray();
-    var addUsers = additionalUsers.filter((ar => !users.find(rm => (ar.phone === rm.phone&& ar.email === rm.email))));
-    let withAdditionalUsers = users.concat(addUsers);
+    var addUsers = additionalUsers.filter((ar => !users.find(rm => (ar.phone === rm.phone && ar.email === rm.email))));
+    let withAdditionalUsers = [...users, ...addUsers];
     return withAdditionalUsers;
 }
 
@@ -72,44 +72,31 @@ function task1() {
 function isValid(teacher) {
 
     var firstCapitalLetter = new RegExp("^([A-Z].*)$");
-
-    if (firstCapitalLetter.test(teacher.note))
-        if (firstCapitalLetter.test(teacher.full_name))
-            //  if (firstCapitalLetter.test(teacher.gender))
-            if (firstCapitalLetter.test(teacher.state))
-                if (firstCapitalLetter.test(teacher.city))
-                    if (firstCapitalLetter.test(teacher.country))
-                        if (!isNaN(teacher.age))
-                            //+1-3
-                            if (/^\+(\([0-9]{3}\))|([0-9]{3})[\-\s\.]?[0-9]{3}[\-\s\.]?[0-9]{4,6}$/.test(teacher.phone)) {
-                                if (/^(.*\@.*)$/.test(teacher.email)){
-                                    console.log(teacher.phone);
-                                    return true;
-                                }
-                            } else {
-                                console.log(teacher.phone);
-                            }
+    if (firstCapitalLetter.test(teacher.note) && firstCapitalLetter.test(teacher.full_name) && firstCapitalLetter.test(teacher.state)
+        && firstCapitalLetter.test(teacher.city) && firstCapitalLetter.test(teacher.country) && typeof (teacher.age) === 'number' &&
+        (/^\+(\([0-9]{3}\))|([0-9]{3})[\-\s\.]?[0-9]{3}[\-\s\.]?[0-9]{4,6}$/.test(teacher.phone)) && teacher.email.includes('@'))
+        return true;
     return false;
 }
 
 function filterUsers(users, country, age, gender, favorite) {
     let filteredUsers = users;
-    if (country != undefined && country != null) {
+    if (country) {
         filteredUsers = filteredUsers.filter(function (item) {
             return country === item.country;
         });
     }
-    if (age != undefined && age != null) {
+    if (age) {
         filteredUsers = filteredUsers.filter(function (item) {
             return age === item.age;
         });
     }
-    if (gender != undefined && gender != null) {
+    if (gender) {
         filteredUsers = filteredUsers.filter(function (item) {
             return gender === item.gender;
         });
     }
-    if (favorite != undefined && favorite != null) {
+    if (favorite) {
         filteredUsers = filteredUsers.filter(function (item) {
             return favorite === item.favorite;
         });
@@ -118,103 +105,97 @@ function filterUsers(users, country, age, gender, favorite) {
 
 }
 
-function task3(users, field, ascendingOrder){
-    if(field=="age"){
-     users= users.sort((a,b)=> ascendingOrder ? compareAge(a, b) : compareAge(b,a));
-    } else if(field=="country"){
-        users= users.sort((a,b)=> ascendingOrder ? compareCountry(a, b) : compareCountry(b,a));
-    } else if (field=="b_date"){
-      users=  users.sort((a,b)=>ascendingOrder ? compareBDate(a, b) : compareBDate(b,a));
-    } else if (field=="full_name"){
-      users=  users.sort((a,b)=>ascendingOrder ? compareName(a, b) : compareName(b,a));
+function task3(users, field, ascendingOrder) {
+    if (field == "age" || field == "country" || field == "b_date" || field == "full_name") {
+        users = users.sort((a, b) => ascendingOrder ? compare(a, b, field) : compare(b, a, field));
     }
 
     return users;
 
 }
 
-function compareAge(el1, el2){
-    if(el1.age===el2.age)
+function compare(el1, el2, field) {
+    if (el1[field] === el2[field])
         return 0;
-    if(el1.age>el2.age)
+    if (el1[field] > el2[field])
         return 1;
     else return -1;
 }
 
-function compareCountry(el1, el2){
-    if ( el1.country < el2.country ){
-        return -1;
-    }
-    if ( el1.country> el2.country ){
-        return 1;
-    }
-    return 0;
-}
-
-function compareName(el1, el2){
-    if ( el1.full_name < el2.full_name ){
-        return -1;
-    }
-    if ( el1.full_name> el2.full_name ){
-        return 1;
-    }
-    return 0;
-}
-
-function compareBDate(el1, el2){
-        if ( el1.b_date < el2.b_date ){
-            return -1;
-        }
-        if ( el1.b_date> el2.b_date ){
-            return 1;
-        }
-        return 0;
-}
 
 function task6(array, func) {
     let count = 0;
     for (let i = 0; i < array.length; i++) {
         if (func(array[i]))
-        count++;
+            count++;
     }
     return Math.round(count / array.length * 100);
 }
 
-function task5(array, search){
-    var element = array.find(ar=>(ar.full_name==search||ar.note==search||ar.age==search));
+function task5(array, search) {
+    var element = array.find(ar => (ar.full_name == search || ar.note == search || ar.age == search));
     return element;
 }
 
 function main() {
     let users = task1();
-  let sortedUsers = task3(users,"b_date", true);
- console.log(sortedUsers);
-    /*console.log(task5(users, '32'));
+    //let sortedUsers = task3(users, "b_date", true);
+    //console.log(sortedUsers);
+ //  console.log(task5(users, '32'));
 
-    console.log(task5(users, 'Jordan Vidal'));
+  //  console.log(task5(users, 'Jordan Vidal'));
 
-    function ageMoreThan30(element){
-        return element.age>30;
-    }
-    function ageNotMoreThan30(element){
-        return !ageMoreThan30(element);
-    }
-    function ageLessThanOrEqualTo30(element){
-        return element.age<=30;
-    }
+      /* function ageMoreThan30(element){
+           return element.age>30;
+       }
+       function ageNotMoreThan30(element){
+           return !ageMoreThan30(element);
+       }
+       function ageLessThanOrEqualTo30(element){
+           return element.age<=30;
+       }
 
-    console.log(task6(users, ageMoreThan30));
-    console.log(task6(users, ageNotMoreThan30));
-    console.log(task6(users, ageLessThanOrEqualTo30));*/
+       console.log(task6(users, ageMoreThan30));
+       console.log(task6(users, ageNotMoreThan30));
+       console.log(task6(users, ageLessThanOrEqualTo30));*/
 
- /*   console.log(filterUsers(users, "Finland", null, null, null));
-    console.log(filterUsers(users, "Finland", null, "female", null));
-    console.log(filterUsers(users, "Finland", 26, "female", null));
-    console.log(filterUsers(users, "Finland", 26, "female", true));
-*/
-    /*for (var i = 0; i < users.length; i++)
-        console.log(isValid(users[i]));
-*/
+  /*     console.log(filterUsers(users, "Finland", null, null, null));
+       console.log(filterUsers(users, "Finland", null, "female", null));
+       console.log(filterUsers(users, "Finland", 26, "female", null));
+       console.log(filterUsers(users, "Finland", 26, "female", true));
+*/  /*  for (var i = 0; i < users.length; i++)
+        console.log(isValid(users[i]));*/
 }
 
 main();
+
+function addTeacher(teacher){
+    /*let charPFP = [];
+    if(!teacher.picture_large){
+        for(let i=0;i<teacher.full_name.length;i++){
+      teacher.full_name.charAt(i);
+        }
+    }*/
+
+    let article = document.createElement("article");
+    article.className='teacher-entity';
+    let teacherPfp = document.createElement("div");
+    teacherPfp.className='teacher-pfp';
+    let image = document.createElement("img");
+    image.setAttribute(src, teacher.picture_large);
+    image.setAttribute(alt, teacher.full_name+"'s profile picture");
+    let name = document.createElement("p");
+    name.className = 'name';
+    let speciality = document.createElement("p");
+    speciality.className = 'speciality';
+    let country = document.createElement("p");
+    country.className = 'country';
+
+    teacherPfp.appendChild(image);
+    article.appendChild(teacherPfp);
+    article.appendChild(name);
+    article.appendChild(speciality);
+    article.appendChild(country);
+
+document.getElementById(teachers-list).appendChild(article);
+}
