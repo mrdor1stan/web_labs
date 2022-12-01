@@ -21,12 +21,10 @@ function getUsersArray() {
     let users = [];
     let id = 12206461;
     for (let i = 0; i < randomUserMock.length; i++) {
-
         var favorite =   randomUserMock[i].favorite===false ? false : randomUserMock[i].favorite || rand([false, true]);
         var bg_color = randomUserMock[i].bg_color || "#" + Math.floor(Math.random() * 16777215).toString(16);
         var course = randomUserMock[i].course || randomCourse();
         var note = randomUserMock[i].note || randomNote(randomUserMock[i].name.first + ' ' + randomUserMock[i].name.last, course);
-
         users.push({
                 "id": id++,
                 "favorite": favorite,
@@ -137,8 +135,38 @@ function task5(array, search) {
     return element;
 }
 
-function main() {
+function addTeacher(teacher){
+    let article = document.createElement("article");
+    article.setAttribute("class", 'teacher-entity');
+    let teacherPfp = document.createElement("div");
+    teacherPfp.setAttribute("class", 'teacher-pfp');
+    let image = document.createElement("img");
+    image.setAttribute("src", teacher.picture_large);
+    image.setAttribute("alt", teacher.full_name+"'s profile picture");
+    let name = document.createElement("p");
+    name.setAttribute("class", 'name');
+    name.innerText = teacher.full_name;
+    let speciality = document.createElement("p");
+    speciality.setAttribute("class", 'speciality');
+    speciality.innerText = teacher.speciality;
+    let country = document.createElement("p");
+    country.setAttribute("class", 'country');
+    country.innerText = 'country';
+
+    teacherPfp.appendChild(image);
+    article.appendChild(teacherPfp);
+    article.appendChild(name);
+    article.appendChild(speciality);
+    article.appendChild(country);
+
+    document.getElementById("teachers-list").appendChild(article);
+}
+
+document.onload = function() {
     let users = task1();
+    for (let i=0;i<users.length;i++) {
+        addTeacher(users[i]);
+    }
     //let sortedUsers = task3(users, "b_date", true);
     //console.log(sortedUsers);
  //  console.log(task5(users, '32'));
@@ -167,35 +195,3 @@ function main() {
         console.log(isValid(users[i]));*/
 }
 
-main();
-
-function addTeacher(teacher){
-    /*let charPFP = [];
-    if(!teacher.picture_large){
-        for(let i=0;i<teacher.full_name.length;i++){
-      teacher.full_name.charAt(i);
-        }
-    }*/
-
-    let article = document.createElement("article");
-    article.className='teacher-entity';
-    let teacherPfp = document.createElement("div");
-    teacherPfp.className='teacher-pfp';
-    let image = document.createElement("img");
-    image.setAttribute(src, teacher.picture_large);
-    image.setAttribute(alt, teacher.full_name+"'s profile picture");
-    let name = document.createElement("p");
-    name.className = 'name';
-    let speciality = document.createElement("p");
-    speciality.className = 'speciality';
-    let country = document.createElement("p");
-    country.className = 'country';
-
-    teacherPfp.appendChild(image);
-    article.appendChild(teacherPfp);
-    article.appendChild(name);
-    article.appendChild(speciality);
-    article.appendChild(country);
-
-document.getElementById(teachers-list).appendChild(article);
-}

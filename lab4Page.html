@@ -2,18 +2,17 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <link href="css/style.css" rel="stylesheet">
     <title>Main - Teachinder</title>
 </head>
 <body>
-
-<main>
+<div class="page-bg">
     <header>
         <span class="row1">
         <h1 class="logo">Teachinder</h1>
         <form id="search">
-            <input class="search-field" type="search" name="search" placeholder="Name, note or age to search"
-                   aria-label="Search field">
+            <input aria-label="Search field" class="search-field" name="search" placeholder="Name, note or age to search"
+                   type="search">
             <input class="search-button" type="submit" value="Search">
         </form>
         </span>
@@ -28,184 +27,60 @@
         </nav>
         <button class="add-teacher-button">Add teacher</button>
             </span>
+        <div class="clear">
+            <hr>
+        </div>
     </header>
-    <div class="clear">
-        <hr>
-    </div>
-    <article id="teachers">
-        <h3>Top teachers</h3>
-        <form>
-            <div class="right-border">
-                <label for="search-age">Age</label>
-                <select id="search-age" name="age">
-                    <option>All</option>
-                    <option>18-31</option>
-                    <option>32-41</option>
-                    <option>42-51</option>
-                </select>
-            </div>
-
-            <div class="right-border">
-                <label for="search-region">Region</label>
-                <select id="search-region" name="region">
-                    <option>All</option>
-                    <option>Europe</option>
-                    <option>Asia</option>
-                    <option>Australia</option>
-                    <option>North America</option>
-                    <option>South America</option>
-                </select>
-            </div>
-
-            <div class="right-border">
-                <label for="search-sex">Sex</label>
-                <select id="search-sex" name="sex">
-                    <option>All</option>
-                    <option>Male</option>
-                    <option>Female</option>
-                    <option>Other</option>
-                </select>
-            </div>
-            <div class="right-border">
-                <input type="checkbox" id="only-with-photo" name="only-with-photo">
-                <label for="only-with-photo">Only with photo</label>
-            </div>
-            <div>
-                <input type="checkbox" id="only-favs" name="only-favs">
-                <label for="only-favs">Only favorites</label>
-            </div>
-        </form>
-
-        <section id="teachers-list">
-
-            <article class="teacher-entity">
-                <div class="teacher-pfp">
-                    <img src="pfps/_MG_0674.jpg" alt="Stosek at FreshFest">
+    <main>
+        <article id="teachers">
+            <h3>Top teachers</h3>
+            <form>
+                <div class="right-border">
+                    <label for="search-age">Age</label>
+                    <select id="search-age" name="age">
+                        <option>All</option>
+                        <option>18-31</option>
+                        <option>32-41</option>
+                        <option>42-51</option>
+                    </select>
                 </div>
-                <p class="name">Ihor Tkachuk</p>
-                <p class="speciality">Chemistry</p>
-                <p class="country">Ukraine</p>
-            </article>
 
-        </section>
-    </article>
+                <div class="right-border">
+                    <label for="search-region">Region</label>
+                    <select id="search-region" name="region">
+                        <option>All</option>
+                        <option>Europe</option>
+                        <option>Asia</option>
+                        <option>Australia</option>
+                        <option>North America</option>
+                        <option>South America</option>
+                    </select>
+                </div>
 
-    <div class="clear">
-        <hr>
-    </div>
+                <div class="right-border">
+                    <label for="search-sex">Sex</label>
+                    <select id="search-sex" name="sex">
+                        <option>All</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="right-border">
+                    <input id="only-with-photo" name="only-with-photo" type="checkbox">
+                    <label for="only-with-photo">Only with photo</label>
+                </div>
+                <div>
+                    <input id="only-favs" name="only-favs" type="checkbox">
+                    <label for="only-favs">Only favorites</label>
+                </div>
+            </form>
 
-    <article id="statistics">
-        <h3>Statistics</h3>
-        <table>
-            <tr aria-label="Header row">
-                <th>Name</th>
-                <th>Speciality</th>
-                <th>Age</th>
-                <th>Gender</th>
-                <th>Nationality</th>
-            </tr>
-            <tr aria-label="Daisy Alexander">
-                <td>Daisy Alexander</td>
-                <td>Chemistry</td>
-                <td>28</td>
-                <td>Female</td>
-                <td>Vietnam</td>
-            </tr>
-            <tr aria-label="Julia Bradley">
-                <td>Julia Bradley</td>
-                <td>Math</td>
-                <td>26</td>
-                <td>Female</td>
-                <td>USA</td>
-            </tr>
-            <tr aria-label="Rita Hart">
-                <td>Rita Hart</td>
-                <td>Art</td>
-                <td>41</td>
-                <td>Female</td>
-                <td>Ireland</td>
-            </tr>
-            <tr aria-label="Jonathan Jacobs">
-                <td>Jonathan Jacobs</td>
-                <td>Math</td>
-                <td>32</td>
-                <td>Male</td>
-                <td>England</td>
-            </tr>
-            <tr aria-label="Nathaniel White">
-                <td>Nathaniel White</td>
-                <td>Computer Science</td>
-                <td>37</td>
-                <td>Male</td>
-                <td>Austria</td>
-            </tr>
-            <tr aria-label="Frank Medina">
-                <td>Frank Medina</td>
-                <td>English</td>
-                <td>43</td>
-                <td>Male</td>
-                <td>Italy</td>
-            </tr>
-            <tr aria-label="Ella Curtis">
-                <td>Ella Curtis</td>
-                <td>Chess</td>
-                <td>34</td>
-                <td>Female</td>
-                <td>USA</td>
-            </tr>
-            <tr aria-label="Claire Simmmons">
-                <td>Claire Simmmons</td>
-                <td>Art</td>
-                <td>38</td>
-                <td>Female</td>
-                <td>Netherlands</td>
-            </tr>
-            <tr aria-label="Benjamin Knight">
-                <td>Benjamin Knight</td>
-                <td>Biology</td>
-                <td>44</td>
-                <td>Male</td>
-                <td>Scotland</td>
-            </tr>
-            <tr aria-label="Norma Rose">
-                <td>Norma Rose</td>
-                <td>Statistics</td>
-                <td>36</td>
-                <td>Female</td>
-                <td>France</td>
-            </tr>
-        </table>
-        <ul class="row-list">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>...</li>
-            <li>last</li>
-        </ul>
-    </article>
-
-    <div class="clear">
-        <hr>
-    </div>
-
-    <article id="favorites">
-        <h3>Favorites</h3>
-
-        <div class="carousel-outer">
-            <img src="pfps/leftarrow.png">
-            <div id="carousel">
-                <article class="teacher-entity">
-                    <div class="teacher-pfp">
-                        <img src="pfps/IMG_20211011_192918_093-01.jpeg" alt="Stosek at the library">
-                    </div>
-                    <p class="name">John Burke</p>
-                    <p class="speciality">Computer Science</p>
-                    <p class="country">Belgium</p>
-                </article>
+            <section id="teachers-list">
 
                 <article class="teacher-entity">
                     <div class="teacher-pfp">
-                        <img src="pfps/_MG_0674.jpg" alt="Stosek at FreshFest">
+                        <img alt="Stosek at FreshFest" src="images/_MG_0674.jpg">
                     </div>
                     <p class="name">Ihor Tkachuk</p>
                     <p class="speciality">Chemistry</p>
@@ -214,7 +89,7 @@
 
                 <article class="teacher-entity">
                     <div class="teacher-pfp">
-                        <img src="pfps/IMG_20211009_170410.jpg" alt="Stosek at Troieschyna">
+                        <img alt="Stosek at Troieschyna" src="images/IMG_20211009_170410.jpg">
                     </div>
                     <p class="name">Floor Jansen</p>
                     <p class="speciality">Vocal</p>
@@ -222,11 +97,20 @@
                 </article>
 
                 <article class="teacher-entity">
+                    <div class="teacher-pfp">
+                        <img alt="Stosek at the library" src="images/IMG_20211011_192918_093-01.jpeg">
+                    </div>
+                    <p class="name">John Burke</p>
+                    <p class="speciality">Computer Science</p>
+                    <p class="country">Belgium</p>
+                </article>
+
+                <article class="teacher-entity">
                     <div class="star">
-                        <img src="pfps/star.png">
+                        <img src="images/star.png">
                     </div>
                     <div class="teacher-pfp">
-                        <img src="pfps/skovoroda.jpg" alt="Hryhorii Skovoroda's memorial">
+                        <img alt="Hryhorii Skovoroda's memorial" src="images/skovoroda.jpg">
                     </div>
                     <p class="name">Ari Tang</p>
                     <p class="speciality">Biology</p>
@@ -235,7 +119,7 @@
 
                 <article class="teacher-entity">
                     <div class="teacher-pfp">
-                        <img src="pfps/SAVE_20211004_094642.jpg" alt="Fetus Stosek in Kropyvnytskyi">
+                        <img alt="Fetus Stosek in Kropyvnytskyi" src="images/SAVE_20211004_094642.jpg">
                     </div>
                     <p class="name">Rachel Andrew</p>
                     <p class="speciality">Medicine</p>
@@ -250,19 +134,192 @@
                     <p class="speciality">Chess</p>
                     <p class="country">Belarus</p>
                 </article>
-            </div>
-            <img src="pfps/rightarrow.png">
+
+                <article class="teacher-entity">
+                    <div class="teacher-pfp">
+                        <p class="pfp">R.L</p>
+                    </div>
+                    <p class="name">Radoslaw Ljuboevic</p>
+                    <p class="speciality">Physics</p>
+                    <p class="country">Poland</p>
+                </article>
+            </section>
+        </article>
+
+        <div class="clear">
+            <hr>
         </div>
 
+        <article id="statistics">
+            <h3>Statistics</h3>
+            <table>
+                <tr aria-label="Header row">
+                    <th>Name</th>
+                    <th>Speciality</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Nationality</th>
+                </tr>
+                <tr aria-label="Daisy Alexander">
+                    <td>Daisy Alexander</td>
+                    <td>Chemistry</td>
+                    <td>28</td>
+                    <td>Female</td>
+                    <td>Vietnam</td>
+                </tr>
+                <tr aria-label="Julia Bradley">
+                    <td>Julia Bradley</td>
+                    <td>Math</td>
+                    <td>26</td>
+                    <td>Female</td>
+                    <td>USA</td>
+                </tr>
+                <tr aria-label="Rita Hart">
+                    <td>Rita Hart</td>
+                    <td>Art</td>
+                    <td>41</td>
+                    <td>Female</td>
+                    <td>Ireland</td>
+                </tr>
+                <tr aria-label="Jonathan Jacobs">
+                    <td>Jonathan Jacobs</td>
+                    <td>Math</td>
+                    <td>32</td>
+                    <td>Male</td>
+                    <td>England</td>
+                </tr>
+                <tr aria-label="Nathaniel White">
+                    <td>Nathaniel White</td>
+                    <td>Computer Science</td>
+                    <td>37</td>
+                    <td>Male</td>
+                    <td>Austria</td>
+                </tr>
+                <tr aria-label="Frank Medina">
+                    <td>Frank Medina</td>
+                    <td>English</td>
+                    <td>43</td>
+                    <td>Male</td>
+                    <td>Italy</td>
+                </tr>
+                <tr aria-label="Ella Curtis">
+                    <td>Ella Curtis</td>
+                    <td>Chess</td>
+                    <td>34</td>
+                    <td>Female</td>
+                    <td>USA</td>
+                </tr>
+                <tr aria-label="Claire Simmmons">
+                    <td>Claire Simmmons</td>
+                    <td>Art</td>
+                    <td>38</td>
+                    <td>Female</td>
+                    <td>Netherlands</td>
+                </tr>
+                <tr aria-label="Benjamin Knight">
+                    <td>Benjamin Knight</td>
+                    <td>Biology</td>
+                    <td>44</td>
+                    <td>Male</td>
+                    <td>Scotland</td>
+                </tr>
+                <tr aria-label="Norma Rose">
+                    <td>Norma Rose</td>
+                    <td>Statistics</td>
+                    <td>36</td>
+                    <td>Female</td>
+                    <td>France</td>
+                </tr>
+            </table>
+            <ul class="row-list">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>...</li>
+                <li>last</li>
+            </ul>
+        </article>
 
-    </article>
+        <div class="clear">
+            <hr>
+        </div>
+
+        <article id="favorites">
+            <h3>Favorites</h3>
+
+            <div class="carousel-outer">
+                <img src="images/leftarrow.png">
+                <div id="carousel">
+                    <article class="teacher-entity">
+                        <div class="teacher-pfp">
+                            <img alt="Stosek at the library" src="images/IMG_20211011_192918_093-01.jpeg">
+                        </div>
+                        <p class="name">John Burke</p>
+                        <p class="speciality">Computer Science</p>
+                        <p class="country">Belgium</p>
+                    </article>
+
+                    <article class="teacher-entity">
+                        <div class="teacher-pfp">
+                            <img alt="Stosek at FreshFest" src="images/_MG_0674.jpg">
+                        </div>
+                        <p class="name">Ihor Tkachuk</p>
+                        <p class="speciality">Chemistry</p>
+                        <p class="country">Ukraine</p>
+                    </article>
+
+                    <article class="teacher-entity">
+                        <div class="teacher-pfp">
+                            <img alt="Stosek at Troieschyna" src="images/IMG_20211009_170410.jpg">
+                        </div>
+                        <p class="name">Floor Jansen</p>
+                        <p class="speciality">Vocal</p>
+                        <p class="country">Denmark</p>
+                    </article>
+
+                    <article class="teacher-entity">
+                        <div class="star">
+                            <img src="images/star.png">
+                        </div>
+                        <div class="teacher-pfp">
+                            <img alt="Hryhorii Skovoroda's memorial" src="images/skovoroda.jpg">
+                        </div>
+                        <p class="name">Ari Tang</p>
+                        <p class="speciality">Biology</p>
+                        <p class="country">China</p>
+                    </article>
+
+                    <article class="teacher-entity">
+                        <div class="teacher-pfp">
+                            <img alt="Fetus Stosek in Kropyvnytskyi" src="images/SAVE_20211004_094642.jpg">
+                        </div>
+                        <p class="name">Rachel Andrew</p>
+                        <p class="speciality">Medicine</p>
+                        <p class="country">UK</p>
+                    </article>
+
+                    <article class="teacher-entity">
+                        <div class="teacher-pfp">
+                            <p class="pfp">A.M</p>
+                        </div>
+                        <p class="name">Anna Muzychuk</p>
+                        <p class="speciality">Chess</p>
+                        <p class="country">Belarus</p>
+                    </article>
+                </div>
+                <img src="images/rightarrow.png">
+            </div>
 
 
-    <div class="clear">
-        <hr>
-    </div>
+        </article>
+
+    </main>
 
     <footer>
+        <div class="clear">
+            <hr>
+        </div>
+
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
             magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
             facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -287,79 +344,87 @@
             <button class="add-teacher-button">Add teacher</button>
         </nav>
     </footer>
-</main>
-
-
-<div id="teacher-info" data-background-color="#1989ff">
-    <div class="popup-header">
-        <h3>Teacher info</h3>
-        <img src="pfps/cross.png" alt="Close" class="icon">
-    </div>
-
-    <img class="long-photo"
-         src="https://m.media-amazon.com/images/M/MV5BMjA5ODI0NzIzNV5BMl5BanBnXkFtZTcwMzM0NjI2Nw@@._V1_.jpg"
-         alt="Taylor Swift">
-    <p class="name">Taylor Swift (she/her)</p>
-    <p class="speciality">Chemistry</p>
-    <p>Kyiv, Ukraine</p>
-    <p>32, Female</p>
-    <a href="mailto:communications@umusic.com">communications@umusic.com</a>
-    <p>+380964993252</p>
-    <p class="wide-text">21 жовтня випускає альбом, який треба застрімити всією школою</p>
-    <a>toggle map</a>
 </div>
 
-
-<div id="add-teacher" data-background-color="#1989ff">
-    <div class="popup-header">
-        <h3>Add teacher</h3>
-        <img src="pfps/cross.png" alt="Close" class="icon">
+<div id="overlay">
+    <div class="popup">
+        <div data-background-color="#1989ff" id="teacher-info">
+            <div class="popup-header">
+                <h3>Teacher info</h3>
+                <img alt="Close" class="icon" src="images/cross.png">
+            </div>
+            <img alt="Taylor Swift"
+                 class="long-photo"
+                 src="https://m.media-amazon.com/images/M/MV5BMjA5ODI0NzIzNV5BMl5BanBnXkFtZTcwMzM0NjI2Nw@@._V1_.jpg">
+            <p class="name">Taylor Swift (she/her)</p>
+            <p class="speciality">Chemistry</p>
+            <p>Kyiv, Ukraine</p>
+            <p>32, Female</p>
+            <a href="mailto:communications@umusic.com">communications@umusic.com</a>
+            <p>+380964993252</p>
+            <p class="wide-text">21 жовтня випускає альбом, який треба застрімити всією школою</p>
+            <a>toggle map</a>
+        </div>
     </div>
-    <form id="add-teacher-form">
-        <label for="name" class="wide-text">Name</label>
-        <input id="name" class="wide-text" name="name" placeholder="Enter name">
+    <div class="popup">
+        <div data-background-color="#1989ff" id="add-teacher">
+            <div class="popup-header">
+                <h3>Add teacher</h3>
+                <img alt="Close" class="icon" src="images/cross.png">
+            </div>
+            <form id="add-teacher-form">
+                <label class="wide-text" for="name">Name</label>
+                <input class="wide-text" id="name" name="name" placeholder="Enter name">
+                <label class="wide-text" for="speciality">Speciality</label>
+                <select aria-label="Speciality" class="wide-text" id="speciality" name="speciality">
+                    <option disabled hidden selected>choose</option>
+                    <option name="math">Mathematics</option>
+                    <option name="female">Chess</option>
+                    <option name="non-binary">Computer Science</option>
+                </select>
+                <label for="country">Country</label>
+                <label for="city">City</label>
+                <input id="country" name="country">
+                <input id="city" name="city">
+                <label for="email">E-mail</label>
+                <label for="phone">Phone</label>
+                <input id="email" name="email" type="email">
+                <input id="phone" name="phone" type="tel">
+                <div class="wide-text">
+                    <label class="wide-text" for="birthdate">Date of birth</label>
+                    <input class="wide-text" id="birthdate" name="birthdate" type="date">
+                </div>
+                <div class="wide-text">
+                    <label for="bg-colour">Background color</label>
+                    <input id="bg-colour" name="bg-colour" type="color">
+                </div>
+                <div class="wide-text">
+                    <label id="sex">Sex</label>
+                    <input for="sex" id="male"
+                           name="sex" type="radio" value="male">
+                    <label for="male">Male</label>
 
-
-        <label for="speciality" class="wide-text">Speciality</label>
-        <select aria-label="Speciality" class="wide-text" id="speciality" name="speciality">
-            <option selected disabled hidden>choose</option>
-            <option name="math">Mathematics</option>
-            <option name="female">Chess</option>
-            <option name="non-binary">Computer Science</option>
-        </select>
-
-        <label for="country">Country</label>
-        <label for="city">City</label>
-        <input id="country" name="country">
-        <input id="city" name="city">
-        <label for="email">E-mail</label>
-        <label for="phone">Phone</label>
-        <input id="email" name="email" type="email">
-        <input id="phone" name="phone" type="tel">
-        <span class="wide-text">
-        <label for="birthdate" class="wide-text">Date of birth</label>
-        <input id="birthdate" class="wide-text" name="birthdate" type="date">
-        </span>
-        <span class="wide-text">
-        <label for="bg-colour">Background color</label>
-        <input id="bg-colour" name="bg-colour" type="color">
-        </span>
-
-        <span class="wide-text">
-        <label id="sex">Sex</label>
-        <input type="radio" id="male"
-               name="sex" value="male" for="sex">
-        <label for="male">Male</label>
-
-        <input type="radio" id="female"
-               name="sex" value="female" for="sex">
-        <label for="female">Female</label>
-</span>
-
-        <label for="comments" class="wide-text">Notes (optional)</label>
-        <textarea id="comments" name="comments" cols="30" rows="10" class="wide-text"></textarea>
-        <input id="add-button" type="submit" value="Add" class="wide-text">
-    </form>
+                    <input for="sex" id="female"
+                           name="sex" type="radio" value="female">
+                    <label for="female">Female</label>
+                </div>
+                <label class="wide-text" for="comments">Notes (optional)</label>
+                <textarea class="wide-text" cols="30" id="comments" name="comments" rows="10"></textarea>
+                <input class="wide-text" id="add-button" type="submit" value="Add">
+            </form>
+        </div>
+    </div>
 </div>
+<script src="js/app.js"></script>
 </body>
+
+
 </html>
+
+
+
+
+
+
+
+

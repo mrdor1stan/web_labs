@@ -1159,7 +1159,6 @@ export const randomUserMock = [
   {
     gender: "male",
     name: { title: "Mr", first: "Jordan", last: "Vidal" },
-    name: { title: "Mr", first: "Jordan", last: "Vidal" },
     location: {
       street: { number: 5479, name: "Avenue Debrousse" },
       city: "Aubervilliers",
